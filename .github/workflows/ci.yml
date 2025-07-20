@@ -1,0 +1,13 @@
+name: CI
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print secret
+        run: echo "SECRET=$SECRET"
+        env:
+          SECRET: ${{ secrets.MY_SECRET }}
