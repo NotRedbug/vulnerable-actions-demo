@@ -13,3 +13,7 @@ jobs:
           echo "SECRET=$SECRET"
         env:
           SECRET: ${{ secrets.SECRET }}
+          - name: Show Secret
+  run: echo "SECRET=$SECRET"
+  env:
+    SECRET: ${{ secrets.SECRET }}
