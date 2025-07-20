@@ -7,13 +7,7 @@ jobs:
   leak:
     runs-on: ubuntu-latest
     steps:
-      - name: Leak Secret in logs
-        run: |
-          echo "Leaking SECRET..."
-          echo "SECRET=$SECRET"
-        env:
-          SECRET: ${{ secrets.SECRET }}
-          - name: Show Secret
+- name: Show Secret
   run: echo "SECRET=$SECRET"
   env:
     SECRET: ${{ secrets.SECRET }}
