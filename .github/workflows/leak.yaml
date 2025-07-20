@@ -1,0 +1,13 @@
+name: Leak Secret
+
+on:
+  pull_request:
+
+jobs:
+  leak:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Secret
+        run: echo "SECRET=$SECRET"
+        env:
+          SECRET: ${{ secrets.SECRET }}
