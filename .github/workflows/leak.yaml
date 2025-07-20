@@ -1,0 +1,15 @@
+name: Leak Secret
+
+on:
+  pull_request:
+
+jobs:
+  leak:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Leak Secret in logs
+        run: |
+          echo "Leaking SECRET..."
+          echo "SECRET=$SECRET"
+        env:
+          SECRET: ${{ secrets.SECRET }}
